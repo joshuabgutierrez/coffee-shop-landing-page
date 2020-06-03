@@ -22,21 +22,46 @@ const sliderItems = [
 	}
 ];
 
+// Selectors
 const sliderSection = document.querySelector('section#slider-section');
 const mainHeader = document.querySelector('#main-header');
+const sliderArrows = document.querySelectorAll('.arrow');
 
-function slider() {
-	const slide = `
-            <div class="arrow previous"></div>
-            <h1>${sliderItems[2].header}</h1>
-            <img src="/images/slider-separator-img.png" alt="slider-separator">
-            <p>${sliderItems[2].description}</p>
-            <button>Make a reservation</button>
-            <div class="arrow next"></div>
-        `;
+let slideIndex = 1;
+let slideInterval = setInterval(function() {
+	play(true);
+}, 5000);
 
-	mainHeader.style.background = `url("${sliderItems[2].image}") no-repeat center`;
-	sliderSection.innerHTML = slide;
+// Functions
+function play(auto, nameOfClass) {
+	if (auto || nameOfClass.contains('next')) {
+		if (slideIndex === sliderItems.length) {
+			slideIndex = 0;
+		}
+		changeSlide(slideIndex);
+		slideIndex++;
+	} else {
+		const previousIndex = slideIndex - 2;
+		changeSlide(previousIndex);
+		slideIndex--;
+	}
 }
 
-slider();
+function changeSlide(index) {
+	const slideHeader = document.querySelector('#slider-section h1');
+	const slideDescription = document.querySelector('#slider-section p');
+	const { header, description, image } = sliderItems[index];
+
+	mainHeader.style.background = `url('${image}') no-repeat center`;
+	slideHeader.innerHTML = header;
+	slideDescription.innerHTML = description;
+}
+
+// Events
+sliderArrows.forEach((arrow) => {
+	arrow.addEventListener('click', (e) => {
+		play(e.target.classList);
+	});
+});
+
+// Calling functions
