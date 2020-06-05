@@ -8,14 +8,14 @@ const sliderItems = [
 	},
 	{
 		id: 2,
-		header: 'Welcome to Savannah Coffee',
+		header: 'A brand new coffe shop',
 		image: '/images/showcase-image-2.jpg',
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae corrupti ut facere aperiam distinctio similique quisquam ad'
 	},
 	{
 		id: 3,
-		header: 'Welcome to Savannah Coffee',
+		header: 'Taste our best coffee',
 		image: '/images/showcase-image-3.jpg',
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae corrupti ut facere aperiam distinctio similique quisquam ad'
@@ -23,14 +23,16 @@ const sliderItems = [
 ];
 
 // Selectors
-const sliderSection = document.querySelector('section#slider-section');
-const mainHeader = document.querySelector('#main-header');
+const sliderSection = document.querySelector('.slider-section');
+const mainHeader = document.querySelector('.main-header');
 const sliderArrows = document.querySelectorAll('.arrow');
+const slideHeader = document.querySelector('.slider-section h1');
+const slideDescription = document.querySelector('.slider-section p');
 
 let slideIndex = 1;
 let slideInterval = setInterval(function() {
 	play(true);
-}, 5000);
+}, 7000);
 
 // Functions
 function play(auto, nameOfClass) {
@@ -47,14 +49,19 @@ function play(auto, nameOfClass) {
 	}
 }
 
+// Animate the slideshow
 function changeSlide(index) {
-	const slideHeader = document.querySelector('#slider-section h1');
-	const slideDescription = document.querySelector('#slider-section p');
 	const { header, description, image } = sliderItems[index];
 
-	mainHeader.style.background = `url('${image}') no-repeat center`;
+	mainHeader.style.opacity = 0.9;
 	slideHeader.innerHTML = header;
 	slideDescription.innerHTML = description;
+
+	setTimeout(() => {
+		mainHeader.style.opacity = 1;
+		mainHeader.style.transition = 'all 1s ease-in';
+		mainHeader.style.backgroundImage = `url('${image}')`;
+	}, 1000);
 }
 
 // Events
@@ -63,5 +70,3 @@ sliderArrows.forEach((arrow) => {
 		play(e.target.classList);
 	});
 });
-
-// Calling functions
