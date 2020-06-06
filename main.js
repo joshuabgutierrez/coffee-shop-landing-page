@@ -27,14 +27,19 @@ const sliderSection = document.querySelector('.slider-section');
 const mainHeader = document.querySelector('.main-header');
 const sliderArrows = document.querySelectorAll('.arrow');
 const slideHeader = document.querySelector('.slider-section h1');
+const slideSeparator = document.querySelector('.slider-section img');
 const slideDescription = document.querySelector('.slider-section p');
+const slideButton = document.querySelector('.slider-section button');
 
+// Global variables
 let slideIndex = 1;
-let slideInterval = setInterval(function() {
-	play(true);
-}, 7000);
 
 // Functions
+
+// const slideInterval = setInterval(function() {
+// 	play(true);
+// }, 8000);
+
 function play(auto, nameOfClass) {
 	if (auto || nameOfClass.contains('next')) {
 		if (slideIndex === sliderItems.length) {
@@ -49,7 +54,6 @@ function play(auto, nameOfClass) {
 	}
 }
 
-// Animate the slideshow
 function changeSlide(index) {
 	const { header, description, image } = sliderItems[index];
 
@@ -62,9 +66,20 @@ function changeSlide(index) {
 		mainHeader.style.transition = 'all 1s ease-in';
 		mainHeader.style.backgroundImage = `url('${image}')`;
 	}, 1000);
+
+	slideshowFadeIn();
 }
 
-// Events
+function slideshowFadeIn() {
+	const tl = gsap.timeline({ defaults: { duration: 0.8 } });
+	tl
+		.from(slideHeader, { y: 50, opacity: 0 })
+		.from(slideSeparator, { y: 100, opacity: 0 })
+		.from(slideDescription, { y: 50, opacity: 0 })
+		.from(slideButton, { opacity: 0 });
+}
+
+// Event Listeners
 sliderArrows.forEach((arrow) => {
 	arrow.addEventListener('click', (e) => {
 		play(e.target.classList);
