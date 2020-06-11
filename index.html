@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dist/normalize.css">
     <link
     rel="stylesheet"
@@ -112,7 +112,103 @@
     </section>
 
     <section id="menu">
-        <h3>Explore our menu</h3>
+        <h1>Explore our menu</h1>
+        <span class="selected"></span>
+        <div class="buttons-container">
+            <a href="#" class="button menu-button active" data-target="coffee">Coffee</a>
+            <a href="#" class="button menu-button" data-target="sandwiches">Sandwiches</a>
+            <a href="#" class="button menu-button" data-target="desserts">Desserts</a>
+        </div>
+        <div class="menu-items isVisible" id="coffee">
+            <div class="menu-item">
+                <header>
+                    <h3>Fresh Roasted Coffee</h3>
+                    <span>$10</span>
+                </header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quos harum officia eaque nobis ut.</p>
+            </div>
+            <div class="menu-item">
+                <header>
+                    <h3>Mocha Latte</h3>
+                    <span>$15</span>
+                </header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quos harum officia eaque nobis ut.</p>
+            </div>
+            <div class="menu-item">
+                <header>
+                    <h3>Hot Chocolate</h3>
+                    <span>$8</span>
+                </header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quos harum officia eaque nobis ut.</p>
+            </div>
+            <div class="menu-item">
+                <header>
+                    <h3>Frappe</h3>
+                    <span>$15</span>
+                </header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quos harum officia eaque nobis ut.</p>
+            </div>
+        </div>
+        <div class="menu-items" id="sandwiches">
+            <div class="menu-item">
+                <header>
+                    <h3>Grilled Vegetable Panini</h3>
+                    <span>$10</span>
+                </header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quos harum officia eaque nobis ut.</p>
+            </div>
+            <div class="menu-item">
+                <header>
+                    <h3>Panini Italiano</h3>
+                    <span>$15</span>
+                </header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quos harum officia eaque nobis ut.</p>
+            </div>
+            <div class="menu-item">
+                <header>
+                    <h3>Black Bean Burger</h3>
+                    <span>$8</span>
+                </header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quos harum officia eaque nobis ut.</p>
+            </div>
+            <div class="menu-item">
+                <header>
+                    <h3>Blaack Russian Reuben</h3>
+                    <span>$15</span>
+                </header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quos harum officia eaque nobis ut.</p>
+            </div>
+        </div>
+        <div class="menu-items" id="desserts">
+            <div class="menu-item">
+                <header>
+                    <h3>Tres Leches Cake</h3>
+                    <span>$10</span>
+                </header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quos harum officia eaque nobis ut.</p>
+            </div>
+            <div class="menu-item">
+                <header>
+                    <h3>Cheesecake</h3>
+                    <span>$15</span>
+                </header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quos harum officia eaque nobis ut.</p>
+            </div>
+            <div class="menu-item">
+                <header>
+                    <h3>Strawberry Pie</h3>
+                    <span>$8</span>
+                </header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quos harum officia eaque nobis ut.</p>
+            </div>
+            <div class="menu-item">
+                <header>
+                    <h3>Leftovers</h3>
+                    <span>$15</span>
+                </header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quos harum officia eaque nobis ut.</p>
+            </div>
+        </div>
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/gsap.min.js"></script>
