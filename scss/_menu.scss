@@ -1,0 +1,59 @@
+#menu {
+	min-height: 50vh;
+	padding: 2em 4em;
+
+	h1 {
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+.buttons-container {
+	text-align: center;
+	margin: 3em 0;
+}
+
+.button {
+	@include button;
+	margin: 0 0.5em;
+}
+
+.active {
+	color: #fff;
+	transition: all 0.3s ease-in-out;
+}
+
+.selected {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: $primary-color;
+	display: block;
+	z-index: -1;
+	transition: all 0.3s ease-in-out;
+}
+
+.menu-items {
+	margin-top: 2em;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	column-gap: 20px;
+	display: none;
+
+	&.isVisible {
+		display: grid;
+	}
+
+	.menu-item {
+		padding: 1em 2em;
+		header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+}

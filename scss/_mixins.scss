@@ -1,0 +1,19 @@
+@mixin separator {
+	content: '';
+	display: block;
+	padding: 0.1em 5em;
+	background-color: $primary-color;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+@mixin button {
+	border: 1px solid $primary-color;
+	color: #333;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 0.5em 1em;
+	cursor: pointer;
+}

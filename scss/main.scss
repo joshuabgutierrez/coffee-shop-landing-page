@@ -1,128 +1,72 @@
-$font-family: 'Open Sans', sans-serif;
-$primary-color: #cf7e00;
-$light-color: #fff;
+@import './variables';
+@import './mixins';
+@import './header';
+@import './about';
+@import './gallery';
+@import './menu';
 
 body {
-	font-family: $font-family;
+	font-family: $secondayFont;
 	font-size: 1rem;
+	line-height: 1.5em;
 }
 
-.main-header {
-	min-height: 100vh;
-	color: $light-color;
-	background-image: url('/images/showcase-image-1.jpg');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	opacity: 1;
-	transition: opacity 1s ease-in-out;
+a {
+	text-decoration: none;
 }
 
-#main-nav {
-	height: 80px;
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-
-	.icon {
-		text-transform: uppercase;
-		font-size: 1.5rem;
-		margin-left: 2em;
-	}
-
-	ul {
-		margin-right: 5em;
-		padding: 0;
-		display: flex;
-	}
-
-	li {
-		list-style: none;
-		margin: 0 1.5em;
-		text-transform: uppercase;
-		font-size: 1rem;
-	}
-
-	a {
-		color: inherit;
-		text-decoration: none;
-	}
+figure {
+	margin: 0;
 }
 
-.slider-section {
-	height: 80vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+h1,
+h3 {
+	font-family: $primaryFont;
+	font-weight: 800;
+}
+#coffee-build {
+	padding-top: 2em;
 
-	& > * {
-		margin: 12px 0;
-	}
-
-	h1 {
+	.title {
 		text-transform: uppercase;
-		font-size: 5rem;
-		letter-spacing: 0.01em;
-	}
-
-	p {
-		max-width: 700px;
-		width: 100%;
 		text-align: center;
-		font-size: 1.12rem;
-		line-height: 1.6em;
+		font-weight: bold;
+		font-size: 2rem;
 	}
 
-	button {
-		outline: none;
-		border: none;
-		font-size: 1.12rem;
-		text-transform: uppercase;
-		border: 1px solid $light-color;
-		background-color: transparent;
-		color: $light-color;
-		padding: 1em;
-		transition: all 0.2s ease-in-out;
+	.grid {
+		display: grid;
+		grid-template-areas: 'left image right';
+		padding: 4em;
+	}
 
-		&:hover {
-			cursor: pointer;
-			background-color: $primary-color;
+	.grid-left {
+		grid-area: left;
+	}
+
+	.grid-center {
+		grid-area: image;
+	}
+
+	.grid-right {
+		grid-area: right;
+	}
+
+	.grid-item {
+		display: flex;
+		align-items: center;
+		text-align: right;
+
+		h3 {
+			font-weight: 600;
+			text-transform: uppercase;
 		}
-	}
-}
 
-// Slider arrow
-@mixin sliderArrow($angle, $position) {
-	border-bottom: 6px solid;
-	border-left: 6px solid;
-	transform: rotate($angle);
-	@if $position == left {
-		left: 2.5%;
-	} @else if $position == right {
-		right: 2.5%;
-	}
-}
-.arrow {
-	width: 48px;
-	height: 48px;
-	border-color: $light-color;
-	opacity: 0.7;
-	position: absolute;
-	top: 50%;
-	transition: all 0.3s ease-in-out;
-
-	&.previous {
-		@include sliderArrow(45deg,left);
-	}
-
-	&.next {
-		@include sliderArrow(-135deg,right);
-	}
-
-	&:hover {
-		opacity: 1;
-		cursor: pointer;
+		img {
+			max-width: 80px;
+			width: 100%;
+			height: 80px;
+			margin: auto 1em;
+		}
 	}
 }
