@@ -4,11 +4,14 @@
 @import './about';
 @import './gallery';
 @import './menu';
+@import './reservation';
+@import './contact';
+@import './footer';
 
 body {
 	font-family: $secondayFont;
 	font-size: 1rem;
-	line-height: 1.5em;
+	line-height: 1.6;
 }
 
 a {
@@ -24,6 +27,7 @@ h3 {
 	font-family: $primaryFont;
 	font-weight: 800;
 }
+
 #coffee-build {
 	padding-top: 2em;
 
@@ -42,6 +46,7 @@ h3 {
 
 	.grid-left {
 		grid-area: left;
+		text-align: right;
 	}
 
 	.grid-center {
@@ -50,12 +55,12 @@ h3 {
 
 	.grid-right {
 		grid-area: right;
+		text-align: left;
 	}
 
 	.grid-item {
 		display: flex;
 		align-items: center;
-		text-align: right;
 
 		h3 {
 			font-weight: 600;
@@ -70,3 +75,5 @@ h3 {
 		}
 	}
 }
+
+@import './responsive';

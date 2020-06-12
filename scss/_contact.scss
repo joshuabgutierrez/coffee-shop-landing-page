@@ -1,0 +1,54 @@
+#contact-us {
+	text-align: center;
+	padding: 3em;
+
+	& > * {
+		margin: 0 auto;
+	}
+
+	p {
+		max-width: 800px;
+		width: 100%;
+	}
+
+	form {
+		margin: 1em auto;
+		max-width: 600px;
+		width: 100%;
+		display: grid;
+		grid-template-columns: 200px 1fr;
+		align-items: center;
+
+		label {
+			text-align: right;
+			margin-right: 1em;
+			color: $primary-color;
+			font-weight: 500;
+			text-transform: uppercase;
+		}
+
+		input {
+			@include input;
+		}
+
+		textarea {
+			border: 1px solid $primary-color;
+			outline: none;
+			border-radius: 5px;
+			padding: 1.5em 0.5em;
+		}
+
+		& > * {
+			margin: 1em 0;
+		}
+
+		button {
+			@include button;
+			max-width: 100px;
+			width: 100%;
+			grid-column: 2/3;
+			background-color: $primary-color;
+			color: #fff;
+		}
+	}
+}

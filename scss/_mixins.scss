@@ -17,3 +17,10 @@
 	padding: 0.5em 1em;
 	cursor: pointer;
 }
+
+@mixin input {
+	padding: 0.5em;
+	border: 1px solid $primary-color;
+	border-radius: 5px;
+	outline: none;
+}
