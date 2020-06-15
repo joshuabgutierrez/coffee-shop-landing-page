@@ -15,6 +15,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: relative;
 
 	.icon {
 		text-transform: uppercase;
@@ -38,6 +39,24 @@
 	a {
 		color: inherit;
 	}
+}
+
+.toggle-bar {
+	position: absolute;
+	left: 1%;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+
+	div {
+		background-color: $primary-color;
+		width: 35px;
+		height: 5px;
+		margin: 0.5em;
+		border-radius: 10px;
+	}
+
+	display: none;
 }
 
 .slider-section {

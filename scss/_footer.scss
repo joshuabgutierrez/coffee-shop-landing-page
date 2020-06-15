@@ -1,37 +1,46 @@
 footer {
-	background: url('/images/footer.jpg') no-repeat center;
-	background-size: cover;
-	height: 50vh;
-	padding: 1em 3em;
+	background: url('/images/footer.jpg') no-repeat top center;
 	color: #fff;
-	display: grid;
-	grid-template-columns: repeat(3, 33.3%);
+	min-height: 35vh;
+	display: flex;
+	justify-content: center;
 	align-items: center;
-	justify-items: center;
+	padding-top: 1em;
+}
+
+.footer-items {
+	width: 100%;
+	margin-top: 5em;
+	padding: 0 2em;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: 30px;
+	text-align: center;
 
-	.footer-item {
-		padding: 2em 3em;
-		margin-top: 3em;
-
+	form {
 		input {
 			@include input;
+			margin-bottom: 1em;
 		}
 
-		form button {
+		button {
 			@include button;
 			background-color: $primary-color;
 			color: #fff;
 		}
 	}
 
-	.social-icons {
+	.footer.item {
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 
+	.social-icons {
 		i {
 			font-size: 1.12rem;
-			cursor: pointer;
+			margin: 0 0.5em;
 		}
 	}
 }
