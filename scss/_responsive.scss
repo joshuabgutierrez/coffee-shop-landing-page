@@ -131,3 +131,94 @@
 		}
 	}
 }
+
+@media (max-width: 620px) {
+	#coffee-build .grid {
+		grid-template-areas: "image" "right" "left";
+	}
+
+	.grid-center img {
+		max-width: 300px;
+	}
+
+	.gallery {
+		padding: 0 2em;
+		display: block;
+
+		.grid-item {
+			margin: 1em 0;
+
+			&.one,
+			&.two {
+				height: 400px;
+			}
+
+			&.three,
+			&.four {
+				height: 250px;
+			}
+		}
+	}
+
+	#menu {
+		padding: 0;
+
+		.menu-items.isVisible {
+			display: block;
+		}
+	}
+
+	#opening-hours-reservation .content .content-items {
+		display: block;
+	}
+
+	#contact-us {
+		form {
+			display: block;
+
+			& > * {
+				display: block;
+			}
+
+			label {
+				text-align: center;
+				margin: 0;
+			}
+
+			input,
+			textarea,
+			button {
+				margin: 0 auto;
+				margin-bottom: 2em;
+				max-width: 300px;
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media (max-width: 420px) {
+	#main-nav .icon {
+		font-size: 1rem;
+	}
+
+	#coffee-build .grid {
+		padding: 0 2em;
+	}
+
+	.buttons-container {
+		display: flex;
+		flex-direction: column;
+		max-width: 250px;
+		width: 100%;
+		margin: 0 auto;
+
+		.button {
+			margin: 0.5em 0;
+		}
+	}
+
+	#opening-hours-reservation .reservation-hours {
+		height: 375px;
+	}
+}

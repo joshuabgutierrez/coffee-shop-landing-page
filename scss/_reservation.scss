@@ -47,6 +47,10 @@
 			text-align: center;
 			display: flex;
 			justify-content: space-between;
+
+			.reservation p:first-child {
+				font-weight: bold;
+			}
 		}
 	}
 }

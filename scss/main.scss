@@ -41,7 +41,7 @@ h3 {
 	.grid {
 		display: grid;
 		grid-template-areas: 'left image image right' 'left image image right';
-		padding: 4em;
+		padding: 1em 4em;
 	}
 
 	.grid-left {

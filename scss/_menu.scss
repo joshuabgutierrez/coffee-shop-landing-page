@@ -19,17 +19,8 @@
 }
 
 .active {
-	color: #fff;
-	transition: all 0.3s ease-in-out;
-}
-
-.selected {
-	position: absolute;
-	top: 0;
-	left: 0;
 	background-color: $primary-color;
-	display: block;
-	z-index: -1;
+	color: #fff;
 	transition: all 0.3s ease-in-out;
 }
 
