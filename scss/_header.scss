@@ -1,7 +1,7 @@
 .main-header {
 	min-height: 100vh;
 	color: $light-color;
-	background-image: url('/images/showcase-image-1.jpg');
+	background-image: url('../images/showcase-image-1.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -27,6 +27,7 @@
 		margin-right: 5em;
 		padding: 0;
 		display: flex;
+		transition: opacity 0.3s ease-in-out;
 	}
 
 	li {
@@ -47,6 +48,7 @@
 	top: 50%;
 	transform: translateY(-50%);
 	cursor: pointer;
+	display: none;
 
 	div {
 		background-color: $primary-color;
@@ -54,9 +56,8 @@
 		height: 5px;
 		margin: 0.5em;
 		border-radius: 10px;
+		transition: all 0.5s ease-in-out;
 	}
-
-	display: none;
 }
 
 .slider-section {
