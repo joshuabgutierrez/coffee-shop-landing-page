@@ -1,27 +1,3 @@
-const sliderItems = [
-	{
-		id: 1,
-		header: 'Welcome to Savannah Coffee',
-		image: '/images/showcase-image-1.jpg',
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae corrupti ut facere aperiam distinctio similique quisquam ad'
-	},
-	{
-		id: 2,
-		header: 'A brand new coffe shop',
-		image: '/images/showcase-image-2.jpg',
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae corrupti ut facere aperiam distinctio similique quisquam ad'
-	},
-	{
-		id: 3,
-		header: 'Taste our best coffee',
-		image: '/images/showcase-image-3.jpg',
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae corrupti ut facere aperiam distinctio similique quisquam ad'
-	}
-];
-
 // Selectors
 const sliderSection = document.querySelector('.slider-section');
 const mainHeader = document.querySelector('.main-header');
@@ -32,8 +8,10 @@ const slideDescription = document.querySelector('.slider-section p');
 const slideButton = document.querySelector('.slider-section button');
 const menuButtons = document.querySelectorAll('.menu-button');
 const menuItems = document.querySelectorAll('.menu-items');
-const menuButtonSelected = document.querySelector('.active');
-const selected = document.querySelector('.selected');
+const toggleBar = document.querySelector('.toggle-bar');
+const navBar = document.querySelector('.main-nav');
+const navLinks = document.querySelectorAll('.main-nav ul li:not(:first-child) > a');
+const makeReservationButton = document.querySelector('.slider-section button');
 
 // Global variables
 let slideIndex = 1;
@@ -46,7 +24,7 @@ let slideIndex = 1;
 
 function play(auto, nameOfClass) {
 	if (auto || nameOfClass.contains('next')) {
-		if (slideIndex === sliderItems.length) {
+		if (slideIndex === sliderData.length) {
 			slideIndex = 0;
 		}
 		changeSlide(slideIndex);
@@ -59,7 +37,7 @@ function play(auto, nameOfClass) {
 }
 
 function changeSlide(index) {
-	const { header, description, image } = sliderItems[index];
+	const { header, description, image } = sliderData[index];
 
 	mainHeader.style.opacity = 0.9;
 	slideHeader.innerHTML = header;
@@ -83,51 +61,36 @@ function slideshowFadeIn() {
 		.from(slideButton, { opacity: 0 });
 }
 
-function initialButtonSelected() {
-	const initialButton = menuButtonSelected.getBoundingClientRect();
-
-	const initialCoords = {
-		width: initialButton.width,
-		height: initialButton.height,
-		left: initialButton.left + window.scrollX,
-		top: initialButton.top + window.scrollY
-	};
-
-	const { width, height, left, top } = initialCoords;
-
-	selected.style.width = `${width}px`;
-	selected.style.height = `${height}px`;
-	selected.style.left = `${left}px`;
-	selected.style.top = `${top}px`;
-}
-
 function displayMenuItemsSelected(e) {
 	e.preventDefault();
-	const menuItemSelected = document.querySelector(`#${this.dataset.target}`);
+
 	const menuButtonSelected = e.target;
-	const menuButtonSelectedCoords = menuButtonSelected.getBoundingClientRect();
-
-	const selectedCoords = {
-		width: menuButtonSelectedCoords.width,
-		height: menuButtonSelectedCoords.height,
-		left: menuButtonSelectedCoords.left + window.scrollX,
-		top: menuButtonSelectedCoords.top + window.scrollY
-	};
-
-	const { width, height, left, top } = selectedCoords;
-
-	selected.style.width = `${width}px`;
-	selected.style.height = `${height}px`;
-	selected.style.left = `${left}px`;
-
-	menuItems.forEach((menuItem) => {
-		menuItem.classList.remove('isVisible');
-		menuItemSelected.classList.add('isVisible');
-	});
+	const menuItemSelected = document.querySelector(`#${e.target.dataset.target}`);
 
 	menuButtons.forEach((button) => {
 		button.classList.remove('active');
 		menuButtonSelected.classList.add('active');
+	});
+
+	menuItems.forEach((item) => {
+		item.style.display = 'none';
+		menuItemSelected.style.display = 'grid';
+	});
+}
+
+function displayMenu() {
+	this.classList.toggle('toggle');
+	navBar.classList.toggle('toggle');
+}
+
+function smoothScrollTo() {
+	const sectionSelectedId = this.dataset.target;
+	const sectionSelected = document.querySelector(`#${sectionSelectedId}`);
+	const sectionSelectedCoords = sectionSelected.getBoundingClientRect();
+
+	window.scrollTo({
+		top: sectionSelectedCoords.top,
+		behavior: 'smooth'
 	});
 }
 
@@ -142,5 +105,10 @@ menuButtons.forEach((button) => {
 	button.addEventListener('click', displayMenuItemsSelected);
 });
 
-initialButtonSelected();
-window.addEventListener('resize', initialButtonSelected);
+navLinks.forEach((link) => {
+	link.addEventListener('click', smoothScrollTo);
+});
+
+makeReservationButton.addEventListener('click', smoothScrollTo);
+
+toggleBar.addEventListener('click', displayMenu);
