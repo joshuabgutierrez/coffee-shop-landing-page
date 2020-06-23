@@ -8,4 +8,4 @@ Technologies used for this project:
 - JavaScript
 - GSAP for animations
 
-LIVE DEMO: Coming soon ...
+LIVE DEMO: http://www.joshuabgutierrez.com/savannah-coffee-shop/
