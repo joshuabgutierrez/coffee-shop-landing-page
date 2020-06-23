@@ -23,11 +23,11 @@
             </div>
             <div class="icon">Savannah Coffee Shop</div>
             <ul>
-                <li><a href="#" class="menu-active">Home</a></li>
-                <li><a href="#" data-target="about-section">Company</a></li>
-                <li><a href="#" data-target="menu">Menu</a></li>
-                <li><a href="#" data-target="gallery">Gallery</a></li>
-                <li><a href="#" data-target="contact-us">Contact Us</a></li>
+                <li><a href="/index.html" class="menu-active">Home</a></li>
+                <li><a href="/index.html" data-target="about-section">Company</a></li>
+                <li><a href="/index.html" data-target="menu">Menu</a></li>
+                <li><a href="/index.html" data-target="gallery">Gallery</a></li>
+                <li><a href="/index.html" data-target="contact-us">Contact Us</a></li>
             </ul>
         </nav>
         <section class="slider-section">
@@ -242,18 +242,38 @@
     <section id="contact-us">
         <h1>Get In Touch</h1>
         <p>If you have questions or comments, please get a hold of us in whichever way is most convenient. Ask away. There is no reasonable question that our team cannot answer</p>
-        <form>
-            <label for="name">Your name</label>
-            <input type="text" name="name">
+        <form name="contact-form" method="POST">
+            <div class="form-item">
+                <div class="form-elements">
+                    <label for="name">Your name</label>
+                    <input type="text" name="name" id="name-input">
+                </div>
+                <span class="error name-error"></span>
+            </div>
         
-            <label for="name">Your phone number</label>
-            <input type="tel" name="name">
+            <div class="form-item">
+                <div class="form-elements">
+                    <label for="name">Your phone number</label>
+                    <input type="tel" name="phone" id="phone-input">
+                </div>
+                <span class="error phone-error"></span>
+            </div>
         
-            <label for="email">Your email</label>
-            <input type="text" name="name">
+            <div class="form-item">
+                <div class="form-elements">
+                    <label for="email">Your email</label>
+                    <input type="text" name="email" id="email-input">
+                </div>
+                <span class="error email-error"></span>
+            </div>
         
-            <label for="message">Your message</label>
-            <textarea name="message"></textarea>
+            <div class="form-item">
+                <div class="form-elements">
+                    <label for="message">Your message</label>
+                    <textarea name="message" id="message-input"></textarea>
+                </div>
+                <span class="error message-error"></span>
+            </div>
         
             <button>Send</button>
         </form>
@@ -284,6 +304,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/gsap.min.js"></script>
+    <script src="formValidation.js"></script>
     <script src="sliderData.js"></script>
     <script src="main.js"></script>
 </body>
