@@ -18,9 +18,9 @@ let slideIndex = 1;
 
 // Functions
 
-// const slideInterval = setInterval(function() {
-// 	play(true);
-// }, 8000);
+const slideInterval = setInterval(function() {
+	play(true);
+}, 8000);
 
 function play(auto, nameOfClass) {
 	if (auto || nameOfClass.contains('next')) {
