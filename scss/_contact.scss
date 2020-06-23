@@ -16,8 +16,13 @@
 		max-width: 600px;
 		width: 100%;
 		display: grid;
-		grid-template-columns: 200px 1fr;
-		align-items: center;
+
+		.form-item {
+			text-align: right;
+			display: flex;
+			flex-direction: column;
+			transform: translateX(-25%);
+		}
 
 		label {
 			text-align: right;
@@ -35,7 +40,7 @@
 			border: 1px solid $primary-color;
 			outline: none;
 			border-radius: 5px;
-			padding: 1.5em 0.5em;
+			padding: 1em 0.7em;
 		}
 
 		& > * {
@@ -46,9 +51,16 @@
 			@include button;
 			max-width: 100px;
 			width: 100%;
-			grid-column: 2/3;
 			background-color: $primary-color;
 			color: #fff;
+			margin: 0 auto;
+			outline: none;
+		}
+
+		span.error {
+			color: #ff3e11;
+			font-size: 0.9rem;
+			font-weight: 500;
 		}
 	}
 }

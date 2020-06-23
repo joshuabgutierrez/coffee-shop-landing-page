@@ -208,26 +208,14 @@
 	}
 
 	#contact-us {
-		form {
-			display: block;
-
-			& > * {
-				display: block;
-			}
-
-			label {
-				text-align: center;
-				margin: 0;
-			}
-
-			input,
-			textarea,
-			button {
-				margin: 0 auto;
-				margin-bottom: 2em;
-				max-width: 300px;
-				width: 100%;
-			}
+		form .form-item {
+			transform: none;
+			margin: 1em auto;
+		}
+		form .form-elements {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 		}
 	}
 }
