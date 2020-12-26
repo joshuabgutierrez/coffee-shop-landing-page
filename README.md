@@ -9,3 +9,5 @@ Technologies used for this project:
 - GSAP for animations
 
 LIVE DEMO: http://www.joshuabgutierrez.com/savannah-coffee-shop/
+
+![Savannah Coffee Shop Page](images/savannah-repo-img.png "Landing Page")
